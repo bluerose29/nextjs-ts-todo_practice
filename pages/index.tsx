@@ -1,17 +1,22 @@
+import * as React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "../components/Layout";
-import styles from "../styles/Home.module.css";
+import { Todos } from "../components/Todos";
 
-const Home: NextPage = () => {
+const Home: NextPage = (tasks) => {
   return (
     <Layout home>
       <Head>
-        <title>NextJS Task List</title>
+        <title>Task List NextJS</title>
       </Head>
       <section>
-        <div></div>
+        <div className="home">
+          <div className="title">
+            <h2>Todo List</h2>
+          </div>
+          <Todos />
+        </div>
       </section>
     </Layout>
   );
