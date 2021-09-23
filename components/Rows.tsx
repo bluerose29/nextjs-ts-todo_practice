@@ -28,6 +28,7 @@ export const Row = ({
         className="checkBox"
         icon={<CircleUnchecked />}
         checkedIcon={<CircleCheckedFilled />}
+        disableRipple={true}
       />
       <label>{title}</label>
     </div>

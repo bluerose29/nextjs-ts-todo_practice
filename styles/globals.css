@@ -77,4 +77,6 @@ body {
 }
 .checkbox-container .checkBox {
   color: #e16a0b;
+  size: 10px;
+  transform: scale(1.3);
 }
