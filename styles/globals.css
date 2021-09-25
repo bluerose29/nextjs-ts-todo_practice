@@ -32,6 +32,9 @@ body {
   position: relative;
   color: #1937b4;
 }
+.title p {
+  color: black;
+}
 .home input[type="text"] {
   margin-top: 15px;
   border: 2px solid #e16a0b;
@@ -44,8 +47,9 @@ body {
   color: white;
   background-color: #e16a0b;
   position: absolute;
-  top: 27%;
-  right: 38%;
+  top: -15px;
+  right: 0px;
+  cursor: pointer;
 }
 .fabAdd :hover {
   color: #e16a0b;
@@ -74,6 +78,7 @@ body {
 .checkbox-container label {
   cursor: pointer;
   display: flex;
+  color: black;
 }
 .checkbox-container .checkBox {
   color: #e16a0b;

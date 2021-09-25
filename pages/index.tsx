@@ -12,9 +12,6 @@ const Home: NextPage = (tasks) => {
       </Head>
       <section>
         <div className="home">
-          <div className="title">
-            <h2>Todo List</h2>
-          </div>
           <Todos />
         </div>
       </section>

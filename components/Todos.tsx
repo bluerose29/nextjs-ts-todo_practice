@@ -1,13 +1,19 @@
 import * as React from "react";
 import { Row } from "./Rows";
 import { data } from "../data/todos";
-import { AddTodo } from "./AddTodo";
 import { v4 as uuidv4 } from "uuid";
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
 
 type Todo = {
   id: string;
   title: string;
   isCompleted: boolean;
+};
+type AddTodoProps = {
+  title: string;
+  handleSubmitTodo: (e: React.FormEvent) => void;
+  handleChange: (e: React.ChangeEvent) => void;
 };
 
 export const Todos = () => {
@@ -59,24 +65,33 @@ export const Todos = () => {
 
   return (
     <section>
-      <div className="task-view">
-        {!hasTodos && <p>Please add a todo!</p>}
-        {hasTodos && <p>{`${remainingTodos} Unfinished Task/s`}</p>}
+      <form onSubmit={handleSubmitTodo}>
+        <div className="title">
+          <h2>Todo List</h2>
+          <div className="task-view">
+            {!hasTodos && <p>Please add a todo!</p>}
+            {hasTodos && <p>{`${remainingTodos} Unfinished Task/s`}</p>}
+            <Fab size="small" type="submit" className="fabAdd">
+              <AddIcon />
+            </Fab>
 
-        {todos.map((todo) => (
-          <Row
-            key={todo.id}
-            todo={todo}
-            handleDeleteTodo={handleDeleteTodo}
-            handleCheckTodo={handleCheckTodo}
-          />
-        ))}
-      </div>
-      <AddTodo
-        title={title}
-        handleChange={handleChange}
-        handleSubmitTodo={handleSubmitTodo}
-      />
+            {todos.map((todo) => (
+              <Row
+                key={todo.id}
+                todo={todo}
+                handleDeleteTodo={handleDeleteTodo}
+                handleCheckTodo={handleCheckTodo}
+              />
+            ))}
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+      </form>
     </section>
   );
 };
