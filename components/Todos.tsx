@@ -10,11 +10,6 @@ type Todo = {
   title: string;
   isCompleted: boolean;
 };
-type AddTodoProps = {
-  title: string;
-  handleSubmitTodo: (e: React.FormEvent) => void;
-  handleChange: (e: React.ChangeEvent) => void;
-};
 
 export const Todos = () => {
   const [todos, setTodos] = React.useState<Todo[]>(data);
